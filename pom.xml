@@ -83,25 +83,29 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>com.googlecode.addjars-maven-plugin</groupId>
-				<artifactId>addjars-maven-plugin</artifactId>
-				<version>1.0.5</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>add-jars</goal>
-						</goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>${basedir}/lib</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			<!-- This plugin will build the jadeclient class files from the wsdl -->
+			<plugin> 
+                <groupId>org.jvnet.jax-ws-commons</groupId> 
+                <artifactId>jaxws-maven-plugin</artifactId> 
+                <version>2.1</version> 
+                <executions>
+                    <execution> 
+                        <id>jadeclient</id>
+                        <phase>generate-sources</phase>
+                        <configuration> 
+                            <packageName>com.extl.jade.user</packageName> 
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                            <wsdlFiles>
+                                <wsdlFile>${basedir}/src/main/resources/UserAPI.wsdl</wsdlFile>            
+                            </wsdlFiles>
+                        </configuration>
+                        <goals> 
+                            <goal>wsimport</goal> 
+                        </goals>            
+                    </execution> 
+                </executions>
+            </plugin> 
+			<!--  -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

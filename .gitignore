@@ -10,3 +10,9 @@
 target
 
 .DS_Store
+.classpath
+.project
+/bin
+
+# Will ignore auto-generated files
+/src/main/java/com/extl/jade/user
