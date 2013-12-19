@@ -33,13 +33,12 @@ import org.dasein.cloud.identity.SSHKeypair;
 import org.dasein.cloud.identity.ServiceAction;
 import org.dasein.cloud.identity.ShellKeySupport;
 
-import com.extl.jade.admin.ResourceState;
-
 import java.util.ArrayList;
 
 import com.extl.jade.user.Condition;
 import com.extl.jade.user.ExtilityException;
 import com.extl.jade.user.FilterCondition;
+import com.extl.jade.user.ResourceState;
 import com.extl.jade.user.ResourceType;
 import com.extl.jade.user.SearchFilter;
 import com.extl.jade.user.SshKey;
